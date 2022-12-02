@@ -17,8 +17,9 @@ if(!$conn) {
 $sql = "select * from movie_director";
 $result = mysqli_query($conn, $sql);
 
-// 만약에 검색 항목에 값이 있다면(0개 이상이라면)
+// 만약 검색된 레코드 값이 있다면
 if(mysqli_num_rows($result) > 0) {
+	// 레코드 갯수만큼 반복하여 데이터를 출력
 	while($row = mysqli_fetch_array($result)) {
 		echo "id: " . $row['id']. " - name: " . $row['name']. " - birthday: " . $row['birthday']. "<br/>";
 	}
